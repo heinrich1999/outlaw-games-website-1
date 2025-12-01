@@ -1,21 +1,27 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const navItems = [
-  { name: "Games", href: "#games" },
-  { name: "About Us", href: "#about" },
-  { name: "Technology", href: "#technology" },
-  { name: "Articles", href: "/articles" },
-  { name: "Support", href: "#support" },
+type NavItem = 
+  | { name: string; hash: string; href?: never }
+  | { name: string; href: string; hash?: never }
+
+const navItems: NavItem[] = [
+  { name: "Games", hash: "#games" },           // Maps to id="games" in GamesSection
+  { name: "About Us", hash: "#about" },        // Maps to id="about" in AboutSection
+  { name: "Technology", hash: "#technology" }, // Maps to id="technology" in TechSection
+  { name: "Articles", href: "/articles" },     // Maps to /articles route
+  { name: "Support", href: "/contact" },        // Maps to /contact page (no support section exists)
 ]
 
 export function Navigation() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -51,16 +57,21 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white/80 hover:text-[#A4FF42] transition-colors text-sm font-medium relative group"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A4FF42] transition-all group-hover:w-full" />
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              // If item has href, use it directly (like Articles)
+              // If item has hash, check if we're on homepage
+              const href = item.href || (pathname === "/" ? item.hash : `/${item.hash}`)
+              return (
+                <Link
+                  key={item.name}
+                  href={href}
+                  className="text-white/80 hover:text-[#A4FF42] transition-colors text-sm font-medium relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#A4FF42] transition-all group-hover:w-full" />
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Desktop Actions */}
@@ -90,16 +101,19 @@ export function Navigation() {
             className="lg:hidden bg-black border-t border-white/10"
           >
             <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-white/80 hover:text-[#A4FF42] transition-colors text-lg font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const href = item.href || (pathname === "/" ? item.hash : `/${item.hash}`)
+                return (
+                  <Link
+                    key={item.name}
+                    href={href}
+                    className="block text-white/80 hover:text-[#A4FF42] transition-colors text-lg font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
               <Button asChild className="w-full bg-[#A4FF42] text-black hover:bg-[#8FE635] font-semibold mt-4">
                 <Link href="/contact">Contact</Link>
               </Button>

@@ -9,7 +9,7 @@ const footerLinks = {
     { name: "Games", href: "#games" },
     { name: "About Us", href: "#about" },
     { name: "Technology", href: "#technology" },
-    { name: "Support", href: "#support" },
+    { name: "Support", href: "/contact" },
   ],
   external: [{ name: "Outlawgames.com", href: "https://outlawgames.app", external: true }],
   social: [
