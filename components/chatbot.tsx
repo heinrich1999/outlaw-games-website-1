@@ -1,14 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { X, Send, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
+function generateSessionId(): string {
+  return `${Date.now()}-${Math.random().toString(36).substring(2, 15)}`
+}
+
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
+  const [sessionId, setSessionId] = useState<string>("")
   const [messages, setMessages] = useState<
     Array<{ id: number; text: string; sender: "user" | "bot"; isTyping?: boolean }>
   >([
@@ -19,6 +24,11 @@ export function Chatbot() {
     },
   ])
   const [inputValue, setInputValue] = useState("")
+
+  // Generate sessionId when component mounts
+  useEffect(() => {
+    setSessionId(generateSessionId())
+  }, [])
 
   const handleSend = async () => {
     if (!inputValue.trim()) return
@@ -50,6 +60,7 @@ export function Chatbot() {
         },
         body: JSON.stringify({
           message: messageText,
+          sessionId: sessionId,
         }),
       })
 
