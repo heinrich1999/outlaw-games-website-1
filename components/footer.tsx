@@ -11,16 +11,11 @@ const footerLinks = {
     { name: "Support", href: "/contact" },
   ],
   external: [{ name: "Outlawgames.com", href: "https://outlawgames.app", external: true }],
-  legal: [
-    { name: "Privacy Notice", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Code of Conduct", href: "#" },
-  ],
 }
 
 export function Footer() {
   return (
-    <footer className="bg-[#B71C1C] text-white">
+    <footer className="bg-black text-white">
       {/* Scrolling Text Banner */}
       <div className="py-8 overflow-hidden">
         <div className="flex whitespace-nowrap animate-scroll">
@@ -76,7 +71,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div>
-            <p className="font-semibold mb-4">FOLLOW US</p>
+            <p className="font-semibold mb-4 text-white">FOLLOW US</p>
             <a
               href="https://linktr.ee/outlawgamefi"
               target="_blank"
@@ -90,17 +85,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex justify-center">
             <p className="text-white/60 text-sm">
               © 2025 - {new Date().getFullYear()} Outlaw Games. All rights reserved.
             </p>
-            <div className="flex flex-wrap gap-4 text-sm">
-              {footerLinks.legal.map((link) => (
-                <Link key={link.name} href={link.href} className="text-white/60 hover:text-white transition-colors">
-                  {link.name}
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </div>

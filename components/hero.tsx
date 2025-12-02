@@ -31,43 +31,77 @@ export function Hero() {
         className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4"
       >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ 
+            duration: 1, 
+            delay: 0.2,
+            ease: [0.16, 1, 0.3, 1]
+          }}
           className="max-w-5xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
-            BUILDING THE
-            <br />
-            NEXT EVOLUTION
-            <br />
-            <span className="text-[#A4FF42]">OF WEB3 GAMING</span>
-          </h1>
+          <motion.h1 
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+          >
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="block"
+            >
+              BUILDING THE
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="block"
+            >
+              NEXT EVOLUTION
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6, type: "spring", stiffness: 100 }}
+              className="block text-[#A4FF42]"
+            >
+              OF WEB3 GAMING
+            </motion.span>
+          </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto"
           >
             Experience the future of gaming with cinematic characters, classic gameplay, and blockchain rewards.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 150 }}
             className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#A4FF42] text-black hover:bg-[#8FE635] font-semibold text-lg px-8 py-6"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <a href="https://outlawgames.app/" target="_blank" rel="noopener noreferrer">
-                Explore Games
-              </a>
-            </Button>
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#A4FF42] text-black hover:bg-[#8FE635] font-semibold text-lg px-8 py-6 shadow-[0_0_30px_rgba(164,255,66,0.3)]"
+              >
+                <a href="https://outlawgames.app/" target="_blank" rel="noopener noreferrer">
+                  Explore Games
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 
