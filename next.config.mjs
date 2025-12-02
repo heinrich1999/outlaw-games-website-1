@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'outlaw-games-website-1-production.up.railway.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.outlaw.games',
+      },
     ],
   },
 }
