@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react"
 
 const footerLinks = {
   main: [
@@ -12,13 +11,6 @@ const footerLinks = {
     { name: "Support", href: "/contact" },
   ],
   external: [{ name: "Outlawgames.com", href: "https://outlawgames.app", external: true }],
-  social: [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "YouTube", icon: Youtube, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-  ],
   legal: [
     { name: "Privacy Notice", href: "#" },
     { name: "Terms of Service", href: "#" },
@@ -85,18 +77,14 @@ export function Footer() {
           {/* Social Links */}
           <div>
             <p className="font-semibold mb-4">FOLLOW US</p>
-            <div className="flex gap-3">
-              {footerLinks.social.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#A4FF42] hover:text-black transition-all"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
+            <a
+              href="https://linktr.ee/outlawgamefi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-white hover:text-[#A4FF42] transition-colors"
+            >
+              <span className="text-[#A4FF42]">↗</span> Linktree
+            </a>
           </div>
         </div>
 
