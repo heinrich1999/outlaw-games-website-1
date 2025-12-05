@@ -1,31 +1,31 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import { Chatbot } from '@/components/chatbot'
-import './globals.css'
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { Chatbot } from "@/components/chatbot";
+import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Outlaw',
-  description: 'Outlaw Games',
-  generator: 'v0.app',
+  title: "Outlaw",
+  description: "Outlaw Games",
+  generator: "v0.app",
   icons: {
     icon: [
       {
-        url: '/images/outlaw-20lime-20green-20logo-20.png',
-        type: 'image/png',
+        url: "/images/outlaw-20lime-20green-20logo-20.png",
+        type: "image/png",
       },
     ],
-    apple: '/images/outlaw-20lime-20green-20logo-20.png',
+    apple: "/images/outlaw-20lime-20green-20logo-20.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -35,5 +35,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
