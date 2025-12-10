@@ -8,18 +8,18 @@ import { Sparkles, Zap, Gamepad2 } from "lucide-react"
 
 const launchFeatures = [
   {
-    title: "Proof of Play Rewards",
-    description: "Rewards are tied directly to verified gameplay activity — not speculation or pay-to-win mechanics.",
+    title: "Instant On-Chain Rewards",
+    description: "Earn cryptocurrency instantly through verified gameplay. No waiting periods, no delays — rewards are automatic and fully owned by you.",
     icon: Sparkles,
   },
   {
-    title: "Zero Upfront Costs",
-    description: "No NFTs, no token purchases, and no required investment to start playing.",
+    title: "Zero Financial Entry Barrier",
+    description: "No NFTs to buy, no token pre-purchases, no mandatory investments. Simply download and start playing.",
     icon: Zap,
   },
   {
-    title: "Mini-Games First",
-    description: "Launch begins with classic, skill-based mini-games designed for fast, fair play.",
+    title: "Real-Time Gameplay Verification",
+    description: "The first working Proof of Play system that verifies your gameplay in real-time and rewards you instantly.",
     icon: Gamepad2,
   },
 ]
@@ -186,7 +186,7 @@ export function PreLaunchSection() {
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
                   style={{ backgroundSize: "200% 100%" }}
                 />
-                <span className="relative z-10">PRE-LAUNCH</span>
+                <span className="relative z-10">NOW LIVE</span>
               </Badge>
             </motion.div>
           </motion.div>
@@ -196,51 +196,43 @@ export function PreLaunchSection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6"
           >
             <motion.span
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
             >
-              Outlaw Wallet Is
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 150,
-                damping: 12,
-              }}
-              className="block text-[#A4FF42] relative inline-block"
-            >
+              Outlaw Games{" "}
               <motion.span
-                animate={{
-                  textShadow: [
-                    "0 0 20px rgba(164,255,66,0.5)",
-                    "0 0 40px rgba(164,255,66,0.8)",
-                    "0 0 20px rgba(164,255,66,0.5)",
-                  ],
-                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
+                  duration: 0.8,
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 150,
+                  damping: 12,
                 }}
+                className="text-[#A4FF42] relative inline-block"
               >
-                Launching Soon
-              </motion.span>
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
-            >
+                <motion.span
+                  animate={{
+                    textShadow: [
+                      "0 0 20px rgba(164,255,66,0.5)",
+                      "0 0 40px rgba(164,255,66,0.8)",
+                      "0 0 20px rgba(164,255,66,0.5)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "easeInOut",
+                  }}
+                >
+                  Now Live
+                </motion.span>
+              </motion.span>{" "}
               on Google Play
             </motion.span>
           </motion.h2>
@@ -258,7 +250,7 @@ export function PreLaunchSection() {
               transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="text-base lg:text-lg text-white/70 leading-relaxed"
             >
-              Play mini-games and earn on-chain rewards through{" "}
+              The first platform in the world to deliver a working{" "}
               <motion.span
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -272,7 +264,7 @@ export function PreLaunchSection() {
               >
                 Proof of Play
               </motion.span>{" "}
-              — reward real gameplay with zero upfront investment.
+              system — earn cryptocurrency instantly through verified gameplay with zero upfront investment.
             </motion.p>
 
             <motion.p
@@ -281,19 +273,19 @@ export function PreLaunchSection() {
               transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-base lg:text-lg text-white/70 leading-relaxed"
             >
-              A new way to experience play-to-earn without NFTs, token purchases, or complicated onboarding. Built on{" "}
+              No NFTs to buy, no token pre-purchases, no mandatory investments. Simply play and earn{" "}
               <motion.span
                 whileHover={{ scale: 1.05, color: "#A4FF42" }}
                 className="font-semibold transition-colors cursor-default"
               >
-                Solana
+                $OUTLAW
               </motion.span>{" "}
-              for everyday players.
+              instantly. The first true Play-to-Earn system available to mainstream users.
             </motion.p>
           </motion.div>
         </motion.div>
 
-        {/* What to Expect at Launch */}
+        {/* Key Features */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -306,7 +298,7 @@ export function PreLaunchSection() {
             transition={{ duration: 0.8, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-2xl lg:text-3xl font-bold text-white text-center mb-12"
           >
-            What to Expect at Launch
+            First in the Market
           </motion.h3>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -444,11 +436,9 @@ export function PreLaunchSection() {
                 className="relative bg-[#A4FF42] text-black hover:bg-[#8FE635] font-semibold text-lg px-10 py-7 overflow-hidden group"
               >
                 <a
-                  href="#newsletter"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.getElementById("newsletter")?.scrollIntoView({ behavior: "smooth" })
-                  }}
+                  href="https://play.google.com/store/apps/details?id=com.outlawgames.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative z-10"
                 >
                   <motion.span
@@ -464,7 +454,7 @@ export function PreLaunchSection() {
                     style={{ backgroundSize: "200% 100%" }}
                   />
                   <span className="relative z-10 flex items-center gap-2">
-                    Follow Launch Updates
+                    Get It on Google Play
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{
@@ -488,7 +478,7 @@ export function PreLaunchSection() {
             transition={{ duration: 0.8, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 text-sm text-white/50"
           >
-            Be the first to know when the Outlaw Wallet becomes available on Google Play.
+            Download now and start earning $OUTLAW instantly through verified gameplay.
           </motion.p>
         </motion.div>
       </div>

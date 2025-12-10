@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ChevronDown } from "lucide-react";
 
 export function Hero() {
@@ -49,6 +50,52 @@ export function Hero() {
           }}
           className="max-w-5xl"
         >
+          {/* NOW LIVE Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
+            className="mb-6 inline-block"
+          >
+            <motion.div
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(164,255,66,0.3)",
+                  "0 0 40px rgba(164,255,66,0.5)",
+                  "0 0 20px rgba(164,255,66,0.3)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+              className="inline-block rounded-full"
+            >
+              <Badge className="bg-[#A4FF42]/20 text-[#A4FF42] border-[#A4FF42]/40 px-5 py-2 text-sm font-bold uppercase tracking-wider relative overflow-hidden">
+                <motion.span
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear",
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  style={{ backgroundSize: "200% 100%" }}
+                />
+                <span className="relative z-10">NOW LIVE ON GOOGLE PLAY</span>
+              </Badge>
+            </motion.div>
+          </motion.div>
+
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight"
             initial={{ opacity: 0 }}
@@ -92,8 +139,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto"
           >
-            We design and develop games that are easy to play and built to
-            compete.
+            The first platform to deliver a true Play-to-Earn experience. Earn{" "}
+            <span className="text-[#A4FF42] font-semibold">$OUTLAW</span> instantly through verified gameplay with zero upfront investment.
           </motion.p>
 
           <motion.div
@@ -116,6 +163,25 @@ export function Hero() {
                 asChild
                 size="lg"
                 className="bg-[#A4FF42] text-black hover:bg-[#8FE635] font-semibold text-lg px-8 py-6 shadow-[0_0_30px_rgba(164,255,66,0.3)]"
+              >
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.outlawgames.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get It on Google Play
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-transparent border-2 border-[#A4FF42]/50 text-white hover:bg-[#A4FF42]/20 hover:border-[#A4FF42] font-semibold text-lg px-8 py-6 backdrop-blur-md shadow-[0_0_20px_rgba(164,255,66,0.2)] hover:shadow-[0_0_30px_rgba(164,255,66,0.4)] transition-all duration-300"
               >
                 <a
                   href="https://linktr.ee/outlawgamefi"
