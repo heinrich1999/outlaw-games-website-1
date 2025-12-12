@@ -92,7 +92,15 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <Link
+                href="/privacy"
+                className="text-white/60 hover:text-[#A4FF42] transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </div>
             <p className="text-white/60 text-sm">
               © 2025 - {new Date().getFullYear()} Outlaw Games. All rights
               reserved.
