@@ -6,14 +6,14 @@ import Image from "next/image";
 const footerLinks = {
   main: [
     { name: "Games", href: "#games" },
-    { name: "About Us", href: "#about" },
+    { name: "FAQ's", href: "/support#faq" },
     { name: "Technology", href: "#technology" },
-    { name: "Support", href: "/contact" },
+    { name: "Support", href: "/support" },
   ],
   external: [
     {
       name: "Outlawgames.app",
-      href: "https://outlawgames.app",
+      href: "https://play.google.com/store/apps/details?id=com.outlawgame.android",
       external: true,
     },
   ],
@@ -66,17 +66,14 @@ export function Footer() {
 
           {/* External Links */}
           <div>
-            {footerLinks.external.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-white hover:text-[#A4FF42] transition-colors mb-3"
-              >
-                <span className="text-[#A4FF42]">↗</span> {link.name}
-              </a>
-            ))}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.outlawgame.android"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-white hover:text-[#A4FF42] transition-colors mb-3"
+            >
+              <span className="text-[#A4FF42]">↗</span> Outlawgames.app
+            </a>
           </div>
 
           {/* Social Links */}

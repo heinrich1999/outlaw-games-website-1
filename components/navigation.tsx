@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { name: "About Us", hash: "#about" },        // Maps to id="about" in AboutSection
   { name: "Technology", hash: "#technology" }, // Maps to id="technology" in TechSection
   { name: "Articles", href: "/articles" },     // Maps to /articles route
-  { name: "Support", href: "/contact" },        // Maps to /contact page (no support section exists)
+  { name: "Support", href: "/support" },        // Maps to /support page
 ]
 
 export function Navigation() {
